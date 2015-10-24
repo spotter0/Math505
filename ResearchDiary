@@ -41,6 +41,45 @@
 Our work focuses on the study of elliptic curves over finite fields, $\F_p$. With the recent prevalence of elliptic curves used in cryptography, there is naturally much work being done to understand their subtleties. In 1985, the use of elliptic curves in cryptography was independently suggested by Neal Koblitz and Victor S. Miller. It was not until 2004 that elliptic curve cryptography algorithms became widely used. \\\\
 Our current focus is, as mentioned above, properties of elliptic curves over $\F_p$. We have asked how many singular/non-singular curves exist over finite fields of order $p$ for $p$ a prime number, what are the restrictions on coefficients $a,b$ for curves of the form $y^2=x^3+ax+b$ so that the resulting curve is isomorphic to $\Z_m\times\Z_n$ for $m,n$ odd primes, and whether it is possible to find primes $p_1$ and $p_2$ with corresponding elliptic curves $E_1$, $E_2$ such that $\left|E\left(\F_{p_1}\right)\right|=\left|E\left(\F_{p_2}\right)\right|$. 
 
+\section{Introduction to Elliptic Curves}
+\begin{definition}
+An \textbf{elliptic curve} is a planar curve defined by an equation of the form \begin{align*}
+y^2=x^3+ax+b
+\end{align*}
+that is \textbf{non-singular}, that is its graph has no cusps or self-intersections. The form above is called a \textbf{Weierstrass equation}.
+\end{definition}
+
+\begin{definition}
+The \textbf{discriminant} of an elliptic curve,
+\begin{align*}
+\Delta=-16\left(4a^3+27b^2\right)
+\end{align*}
+determines if the curve is non-singular. That is, a given curve is non-singular if and only if the discriminant is non-zero. The graph of a non-singular elliptic curve has two components if its discriminant is positive and one component if it is negative.
+\end{definition}
+
+\subsection{Elliptic Curve Group Law}
+The set of points on a particular elliptic curve, $G$, has a natural interpretation as a group. When working in the projective plane, we can define a group structure on any smooth, cubic curve.\\\\
+In Weierstrass normal form, such a curve will have an additional point at infinity $O$, at the homogeneous coordinates $[0:1:0]$ which serves as the identity of the group.
+
+\begin{definition}
+We define the binary operation $\oplus$ as follows. For $P,Q$ two points on the curve, $P\oplus Q$ is found by first drawing a line between $P$ and $Q$. This will generally intersect the cubic at a third point, $R$. We then take $P\oplus Q=-R$, the point opposite $R$.
+\end{definition}
+
+\begin{proposition}
+The binary operation $\oplus$ on $E(k)$ for some field $k$ such that for points $P,Q,R$ on $E$:
+\begin{enumerate}
+\item $P\oplus Q=Q\oplus P$
+\item $P\oplus O=P$
+\item If a line $L$ meets $E$ at points $P,Q,R$, then $(P\oplus Q)\oplus R=O$
+\item Given $P\in E(k)$, there exists $R\in E(k)$ such that $P\oplus R=O$
+\item $(P\oplus Q)\oplus R=P\oplus(Q\oplus R)$
+\end{enumerate}
+Therefore, $(E(k),\oplus)$ is an Abelian group.
+\end{proposition}
+
+\subsection{Interesting, Known Results}
+
+
 \section{Entries}
 
 \subsection{October 12, 2015 - Group structures}
