@@ -106,8 +106,20 @@ Let $p\equiv 1\mod 4$ and let $i\in\F_p$ be such that $i^2\equiv -1\mod p$. Then
 \begin{definition} An algebraic curve is singular at a point if all of its partial derivatives vanish. In this case, the point is said to be a singular point and the curve is said to be a singular curve.
 \end{definition}
 
-\begin{lemma} If $$y^2=x^3+a_1x+b_1 \iff y^2=x^3+a_2x+b_2,$$ then $a_1=a_2$ and $b_1=b_2$. In other words, there are exactly $p^2$ distinct elliptic curves in Weierstrass form: one for each choice of $a,b$.
+\begin{lemma} If $$y^2=x^3+a_1x+b_1 \text{ and } y^2=x^3+a_2x+b_2,$$ then $a_1=a_2$ and $b_1=b_2$. In other words, there are exactly $p^2$ distinct elliptic curves in Weierstrass form: one for each choice of $a,b$.
 \end{lemma}
+
+\begin{proof} (Stephanie Potter)\\
+Assume $x^3+a_1x+b_1=y^2=x^3+a_2x+b_2$. This requires that
+$$a_1x+b_1=a_2x+b_2$$
+for all $x$. We consider three cases:
+\begin{enumerate}
+\item Suppose $a_1=a_2$. Then in order to maintain $a_1x+b_1=a_1x+b_2$ for all $x$ requires that $b_1=b_2$.
+\item Suppose $b_1=b_2$. Once again, in order to maintain $a_1x+b_1=a_2x+b_2$ for all $x$ requires that $a_1=a_2$.
+\item With this, suppose $a_1\not=a_2$ and $b_1\not=b_2$. Then, $a_1x+b_1=a_2x+b_2$ is true only when $$x=\frac{b_2-b_1}{a_1-a_2}.$$
+\end{enumerate}
+Therefore, it is clear that we must have $a_1=a_2$ and $b_1=b_2$ and so there are exactly $p^2$ distinct elliptic curves, one for each choice of $a$ and $b$.
+\end{proof}
 
 \begin{conjecture}
 Over the finite field $\F_p$, $p$ an odd prime, there exist $p$ singular elliptic curves in Weierstrass form.
@@ -120,14 +132,14 @@ Carrying out the long division $$(x-x_1)^2 \hspace{1ex}\big)\hspace{-.8ex}\overl
 \end{proof}
 
 \begin{conjecture}
-Over $\F_p$, $p$ and odd prime, the number of curves of order $p+1-r$ is equivalent to the number of curves of order $p+1+r$ for all $r\in\Z$. 
+Over $\F_p$, $p$ an odd prime, the number of curves of order $p+1-r$ is equivalent to the number of curves of order $p+1+r$ for all $r\in\Z$. 
 \end{conjecture}
 
 \begin{proof}
 
 \end{proof}
 
-\begin{theorem}(Hasse) For an elliptic curve $E$ defined over the finite field $\F_p$ of $q$ elements, the order of the group $E\left(\F_q\right)$ of $\F_q$-rational points is an integer in the Hasse interval
+\begin{theorem}(Hasse) For an elliptic curve $E$ defined over the finite field $\F_q$ of $q$ elements, the order of the group $E\left(\F_q\right)$ of $\F_q$-rational points is an integer in the Hasse interval
 \begin{align*}
 \hasse_q=\left[q+1-2\sqrt{q},q+1+2\sqrt{q}\right]
 \end{align*}
@@ -154,7 +166,20 @@ with $p<q$ both prime.
 \underline{Notes}:
 \begin{enumerate}
 \item Reference Liljana Babinkostova's paper titled \emph{Elliptic Reciprocity}. This can be found in Dropbox under the Literature folder.
-\item (Stephanie Potter) Prove that, for different integers $a,b$, one necessarily gets unique curves of the form $y^2=x^3+ax+b$.
+\item (Stephanie Potter) Prove that, for different integers $a,b$, one necessarily gets unique curves of the form $y^2=x^3+ax+b$. This was included above.
+\end{enumerate}
+
+\subsection{October 24, 2015 - Group Meeting}
+\underline{Notes}: 
+\begin{enumerate}
+\item Monica has generated data in reference to last week's question: determine the possible orders for curves of the form $y^2=x^3+px\mod q$ with $p<q$ both prime. More data will be generated shortly.
+\item We found John J. McGee's thesis on Schoof's algorithm. In this paper, determining orders of elliptic curves is described which we believe might be useful in proving Conjecture 10. This paper can be found in Dropbox under Literature.
+\end{enumerate}
+
+\underline{Questions/Conjectures}:
+\begin{enumerate}
+\item No point can be in two distinct curves of the same order. Unfortunately, we found a counterexample to this.
+\item Is the proof of Hasse's algorithm enlightening in determining how to prove Conjecture 10? 
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
